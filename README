@@ -1,0 +1,11 @@
+Find and replace in MySQL - using PHP
+posted 4 Jan 2011 05:44 by Peter Davies   [ updated 4 Jan 2011 07:11 ]
+
+No point in re-inventing the wheel, this is very handy:
+http://www.mjdigital.co.uk/blog/search-and-replace-text-in-whole-mysql-database/
+
+GPL version of updated tool:
+https://launchpad.net/mysql-search-replace
+
+Update: attached is my copy of the script modified to use LIKE instead of REGEX. This best suited my requirement to find and replace URL's. I also added "`" style quotes for Joomla's funny use of reserved names for fields!
+

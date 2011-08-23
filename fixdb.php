@@ -11,11 +11,19 @@
 // Added "`" qoutes around field names
 // Added output to screen only
 
+// MOLDROYD (2011-08-23)
+// Added table exclusions array and looping logic
+
 // SEARCH FOR
 $search        = 'src="http://www.url.com/';
 
 // REPLACE WITH
 $replace    = 'src="/'; // (used if queryType below is set to 'replace')
+
+// Table names to exclude from search / replace
+$exclusions = array(
+
+);
 
 // DB Details
 $hostname = "localhost";
@@ -64,6 +72,11 @@ $summary = '';
 
 // LOOP THROUGH EACH TABLE
 foreach($tables as $table) {
+	
+	if (in_array($table,$exclusions))
+	
+		continue;
+	
     // GET A LIST OF FIELDS
     $field_sql = 'SHOW FIELDS FROM '.$table;
     $field_q = mysql_query($field_sql,$MJCONN);
